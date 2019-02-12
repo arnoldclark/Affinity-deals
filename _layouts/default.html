@@ -7,7 +7,7 @@
 	  <meta name="robots" content="noindex">
   {% endif %}
 
-	<title>{{ page.title }} | Inspo</title>
+	<title>{{ page.title }} | Deals</title>
 
 	<meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}">
 	<meta name="viewport" content="width=device-width">
@@ -16,23 +16,12 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	{% include google-analytics.html %}
 	<link rel="stylesheet" href="/assets/css/styles.css">
-	{% if page.snippets %}
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
-		<link rel="stylesheet" href="/assets/css/darcula-theme.css">
-	{% endif %}
 </head>
 
 <body>
-	{% include google-analytics-fallback.html %}
 
-	{% include header.html %}
-
-		{{ content }}
-
-		{% include footer.html %}
+	{{ content }}
 
 	{% include scripts.html %}
 
