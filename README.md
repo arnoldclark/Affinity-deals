@@ -1,2 +1,2 @@
-# Deals
-Web app for exporting data
+# Inspo
+Design inspiration site
