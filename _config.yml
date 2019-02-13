@@ -4,4 +4,4 @@ highlighter: null # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json",  "README.md", "_scripts", "_scss", "gemfile", "Gemfile.lock"]
 url: "http://elisweb.co.uk"
 destination: docs
-baseurl: ""
+baseurl: "/Deals"
