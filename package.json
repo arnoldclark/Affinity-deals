@@ -22,7 +22,7 @@
     "browser-sync": "^2.24.6",
     "browserify": "*",
     "eslint-config-airbnb-relaxed": "^0.2.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "*",
     "gulp-buffer": "0.0.2",
     "gulp-changed": "*",
@@ -39,7 +39,7 @@
     "gulp-tap": "*",
     "gulp-uglify": "*",
     "gulp-util": "*",
-    "run-sequence": "*",
+    "gulp4-run-sequence": "*",
     "vinyl-buffer": "*",
     "yargs": "*"
   },

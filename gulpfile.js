@@ -13,7 +13,7 @@ var gulp = require('gulp'),
   prefix = require('gulp-autoprefixer'),
   reload = browserSync.reload,
   rename = require("gulp-rename"),
-  runSequence = require('run-sequence'),
+  runSequence = require('gulp4-run-sequence'),
   sass = require('gulp-sass'),
   sourcemaps = require('gulp-sourcemaps'),
   tap = require('gulp-tap'),
@@ -75,6 +75,7 @@ gulp.task('javascripts', function() {
     // .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./assets/scripts'))
     .pipe(gulp.dest('./docs/assets/scripts'))
+    .pipe(reload({ stream: true }));
 });
 
 
@@ -101,6 +102,7 @@ gulp.task('stylesheets', function() {
       title: 'SCSS Compiled:'
     }))
     .pipe(gulp.dest('./assets/css'))
+    .pipe(reload({ stream: true }));
 });
 
 gulp.task('optimize_images', function() {
@@ -110,12 +112,13 @@ gulp.task('optimize_images', function() {
       title: 'Crunched:'
     }))
     .pipe(gulp.dest('./assets/images'))
+    .pipe(reload({ stream: true }));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./_scss/**/*.scss', ['stylesheets']);
-  gulp.watch('./node_modules/bootstrap/scss/bootstrap.scss', ['stylesheets']);
-  gulp.watch('./_scripts/**/*.js', ['javascripts']);
+  gulp.watch('./_scss/**/*.scss', gulp.series('stylesheets'));
+  gulp.watch('./node_modules/bootstrap/scss/bootstrap.scss', gulp.series('stylesheets'));
+  gulp.watch('./_scripts/**/*.js', gulp.series('javascripts'));
   gulp.watch(['./docs/**/*']).on("change", reload);
 });
 
