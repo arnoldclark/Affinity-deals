@@ -39,7 +39,6 @@
     "gulp-tap": "*",
     "gulp-uglify": "*",
     "gulp-util": "*",
-    "jquery": "^3.3.1",
     "run-sequence": "*",
     "vinyl-buffer": "*",
     "yargs": "*"
@@ -54,8 +53,6 @@
     "bootstrap": "^4.0.0",
     "express": "^4.16.4",
     "gulp-mamp": "0.0.5",
-    "mysql": "^2.16.0",
-    "net-browserify": "^0.2.4",
     "popper.js": "^1.14.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

@@ -59,6 +59,10 @@
                   <label for='image1' class="d-block mb-0">Image URL</label>
                   <input type="text" name="Image" id="image1" class="d-block form-control" />
                 </div>
+                <div class="form-group d-block">
+                  <label for='months1' class="d-block mb-0">Term (months)</label>
+                  <input type="number" name="Months" id="months1" class="d-block form-control" />
+                </div>
               </div>
             </div>
 
@@ -84,6 +88,10 @@
                 <div class="form-group d-block">
                   <label for='image2' class="d-block mb-0">Image URL</label>
                   <input type="text" name="Image" id="image2" class="d-block form-control" />
+                </div>
+                <div class="form-group d-block">
+                  <label for='months2' class="d-block mb-0">Term (months)</label>
+                  <input type="number" name="Months" id="months2" class="d-block form-control" />
                 </div>
               </div>
             </div>
@@ -111,6 +119,10 @@
                   <label for='image3' class="d-block mb-0">Image URL</label>
                   <input type="text" name="Image" id="image3" class="d-block form-control" />
                 </div>
+                <div class="form-group d-block">
+                  <label for='months3' class="d-block mb-0">Term (months)</label>
+                  <input type="number" name="Months" id="months3" class="d-block form-control" />
+                </div>
               </div>
             </div>
 
@@ -137,12 +149,17 @@
                   <label for='image4' class="d-block mb-0">Image URL</label>
                   <input type="text" name="Image" id="image4" class="d-block form-control" />
                 </div>
+                <div class="form-group d-block">
+                  <label for='months4' class="d-block mb-0">Term (months)</label>
+                  <input type="number" name="Months" id="months4" class="d-block form-control" />
+                </div>
               </div>
             </div>
 
             <div class="col-sm-6 generate-links d-none">
               <div class="form-group d-block">
-                <a href="#" id="genJSON" download="affinity-deals.json">Generate data</a>
+                <a href="#" id="genJSON" class="btn btn-primary" download="affinity-deals.json">Generate JSON</a>
+                <a href="#" id="genCSV" class="btn btn-info">Generate CSV</a>
               </div>
             </div>
           </div>
@@ -159,7 +176,7 @@
       </div>
 
 
-	 <script src="/Deals/assets/scripts/scripts.js"></script>
+	 <script src="/assets/scripts/scripts.js"></script>
 
 
 </body>
