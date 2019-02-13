@@ -45,7 +45,6 @@ for (let i = 0; i < inputs.length; i++) {
 }
 
 genCSV.addEventListener("click", function(e) {
-  e.preventDefault();
   DownloadJSON2CSV(data)
 })
 
@@ -64,7 +63,12 @@ function DownloadJSON2CSV(objArray) {
 
     str += line + '\r\n';
   }
-  window.open("data:text/csv;charset=utf-8," + escape(str))
+  // window.open("data:text/csv;charset=utf-8," + escape(str))
+  let blob = new Blob([str], {
+    type: "text/csv"
+  });
+  let url = URL.createObjectURL(blob);
+  genCSV.href = url;
 }
 
 function createDownloadButton(data) {
