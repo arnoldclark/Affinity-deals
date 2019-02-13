@@ -9,8 +9,16 @@ current: home
   <div class="container">
     <div class="row">
       <div class="col-sm-12 text-center">
-        <img src="assets/images/database--add.svg" width="50" alt="Add your data" />
+        <img src="{{ site.baseurl }}/assets/images/database--add.svg" width="50" alt="Add your data" />
         <h1>Add your deals...</h1>
+        <a href="https://github.com/eli-nathan/Deals" target="_blank" class="badge badge-dark">
+          <i class="fa fa-github" aria-hidden="true"></i>
+          &nbsp; View on github
+        </a>
+        <a href="{{ site.baseurl }}/help" target="_blank" class="badge badge-info">
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+          &nbsp; Help
+        </a>
       </div>
     </div>
   </div>
@@ -160,3 +168,27 @@ current: home
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
