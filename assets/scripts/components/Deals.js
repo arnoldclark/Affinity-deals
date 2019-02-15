@@ -77,8 +77,6 @@ function (_Component) {
           data.length = 0;
 
           for (x = 0; x < _this.state.dealAmount; x++) {
-            console.log("x = " + x); // console.log("Looking for #name" + (x+1));
-
             data.push({
               "Name": document.querySelector("#name" + (x + 1)).value,
               "Spec": document.querySelector("#variant" + (x + 1)).value,
@@ -111,7 +109,6 @@ function (_Component) {
         });
       }
 
-      console.log(blksToRender);
       var blks = blksToRender.map(function (blk) {
         return _react.default.createElement("div", {
           className: "col-md-6 deal-block",
@@ -181,7 +178,6 @@ function (_Component) {
         }))));
       });
       return blks;
-      console.log(blks);
     }
     /* Download button functions */
 

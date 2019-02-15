@@ -35,8 +35,6 @@ class Data extends Component {
         data.length = 0
 
         for(x = 0; x < _this.state.dealAmount; x++ ) {
-          console.log("x = " + x);
-          // console.log("Looking for #name" + (x+1));
           data.push(
             {
               "Name": document.querySelector("#name" + (x+1)).value,
@@ -64,7 +62,6 @@ class Data extends Component {
     for(let i = 0; i < dealAmount; i++) {
       blksToRender.push({"number": i+1})
     }
-    console.log(blksToRender);
     const blks = blksToRender.map(blk => (
       <div className="col-md-6 deal-block" key={blk.number}>
         <div className="mb-4 border border-info rounded p-2 p-sm-4">
@@ -95,42 +92,41 @@ class Data extends Component {
           </div>
         </div>
       </div>
-    ));
-    return blks;
-    console.log(blks);
+    ))
+    return blks
   }
 
   /* Download button functions */
   DownloadJSON2CSV(objArray) {
-    let array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
-    let str = 'Name, Spec, Image, Deposit, Monthly, Months' + '\r\n';
+    let array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray
+    let str = 'Name, Spec, Image, Deposit, Monthly, Months' + '\r\n'
 
     for (let i = 0; i < array.length; i++) {
-      let line = '';
+      let line = ''
 
       for (let index in array[i]) {
-        line += array[i][index] + ',';
+        line += array[i][index] + ','
       }
 
-      line.slice(0, line.Length - 1);
+      line.slice(0, line.Length - 1)
 
-      str += line + '\r\n';
+      str += line + '\r\n'
     }
     let blob = new Blob([str], {
       type: "text/csv"
-    });
-    let url = URL.createObjectURL(blob);
-    genCSV.href = url;
+    })
+    let url = URL.createObjectURL(blob)
+    genCSV.href = url
   }
 
   createDownloadJSONButton(data){
-    let json = JSON.stringify(data);
+    let json = JSON.stringify(data)
     let blob = new Blob([json], {
       type: "application/json"
-    });
-    let url = URL.createObjectURL(blob);
+    })
+    let url = URL.createObjectURL(blob)
 
-    document.querySelector("#genJSON").href = url;
+    document.querySelector("#genJSON").href = url
   }
 
   render() {
@@ -148,4 +144,4 @@ class Data extends Component {
   }
 }
 
-export default Data;
+export default Data
