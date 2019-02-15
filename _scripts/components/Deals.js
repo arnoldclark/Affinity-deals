@@ -17,11 +17,14 @@ class Data extends Component {
     let genCSV = document.getElementById("genCSV")
     let dealAmount = document.getElementById("numberOfDeals")
     let data = []
+    let x
 
     dealAmount.addEventListener("change", function() {
       _this.setState({
         dealAmount: dealAmount.value
       })
+      let inputs = document.querySelectorAll("input")
+      let blocks = document.querySelectorAll(".deal-block")
     })
 
     for(let i = 0; i < inputs.length; i++) {
@@ -31,7 +34,9 @@ class Data extends Component {
         })
         data.length = 0
 
-        for(let x = 0; x < blocks.length; x++ ) {
+        for(x = 0; x < _this.state.dealAmount; x++ ) {
+          console.log("x = " + x);
+          // console.log("Looking for #name" + (x+1));
           data.push(
             {
               "Name": document.querySelector("#name" + (x+1)).value,
@@ -52,45 +57,14 @@ class Data extends Component {
     })
   }
 
-  DownloadJSON2CSV(objArray) {
-    let array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
-    let str = 'Name, Spec, Image, Deposit, Monthly, Months' + '\r\n';
-
-    for (let i = 0; i < array.length; i++) {
-      let line = '';
-
-      for (let index in array[i]) {
-        line += array[i][index] + ',';
-      }
-
-      line.slice(0, line.Length - 1);
-
-      str += line + '\r\n';
-    }
-    // window.open("data:text/csv;charset=utf-8," + escape(str))
-    let blob = new Blob([str], {
-      type: "text/csv"
-    });
-    let url = URL.createObjectURL(blob);
-    genCSV.href = url;
-  }
-
-  createDownloadJSONButton(data){
-    let json = JSON.stringify(data);
-    let blob = new Blob([json], {
-      type: "application/json"
-    });
-    let url = URL.createObjectURL(blob);
-
-    document.querySelector("#genJSON").href = url;
-  }
-
+  /* Render blocks function */
   renderBlocks() {
     let blksToRender = []
     let dealAmount = parseInt(this.state.dealAmount)
     for(let i = 0; i < dealAmount; i++) {
       blksToRender.push({"number": i+1})
     }
+    console.log(blksToRender);
     const blks = blksToRender.map(blk => (
       <div className="col-md-6 deal-block" key={blk.number}>
         <div className="mb-4 border border-info rounded p-2 p-sm-4">
@@ -124,6 +98,39 @@ class Data extends Component {
     ));
     return blks;
     console.log(blks);
+  }
+
+  /* Download button functions */
+  DownloadJSON2CSV(objArray) {
+    let array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+    let str = 'Name, Spec, Image, Deposit, Monthly, Months' + '\r\n';
+
+    for (let i = 0; i < array.length; i++) {
+      let line = '';
+
+      for (let index in array[i]) {
+        line += array[i][index] + ',';
+      }
+
+      line.slice(0, line.Length - 1);
+
+      str += line + '\r\n';
+    }
+    let blob = new Blob([str], {
+      type: "text/csv"
+    });
+    let url = URL.createObjectURL(blob);
+    genCSV.href = url;
+  }
+
+  createDownloadJSONButton(data){
+    let json = JSON.stringify(data);
+    let blob = new Blob([json], {
+      type: "application/json"
+    });
+    let url = URL.createObjectURL(blob);
+
+    document.querySelector("#genJSON").href = url;
   }
 
   render() {

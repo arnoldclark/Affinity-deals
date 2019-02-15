@@ -58,10 +58,14 @@ function (_Component) {
       var genCSV = document.getElementById("genCSV");
       var dealAmount = document.getElementById("numberOfDeals");
       var data = [];
+      var x;
       dealAmount.addEventListener("change", function () {
         _this.setState({
           dealAmount: dealAmount.value
         });
+
+        var inputs = document.querySelectorAll("input");
+        var blocks = document.querySelectorAll(".deal-block");
       });
 
       for (var i = 0; i < inputs.length; i++) {
@@ -72,7 +76,9 @@ function (_Component) {
 
           data.length = 0;
 
-          for (var x = 0; x < blocks.length; x++) {
+          for (x = 0; x < _this.state.dealAmount; x++) {
+            console.log("x = " + x); // console.log("Looking for #name" + (x+1));
+
             data.push({
               "Name": document.querySelector("#name" + (x + 1)).value,
               "Spec": document.querySelector("#variant" + (x + 1)).value,
@@ -91,40 +97,8 @@ function (_Component) {
         _this.DownloadJSON2CSV(data);
       });
     }
-  }, {
-    key: "DownloadJSON2CSV",
-    value: function DownloadJSON2CSV(objArray) {
-      var array = _typeof(objArray) != 'object' ? JSON.parse(objArray) : objArray;
-      var str = 'Name, Spec, Image, Deposit, Monthly, Months' + '\r\n';
+    /* Render blocks function */
 
-      for (var i = 0; i < array.length; i++) {
-        var line = '';
-
-        for (var index in array[i]) {
-          line += array[i][index] + ',';
-        }
-
-        line.slice(0, line.Length - 1);
-        str += line + '\r\n';
-      } // window.open("data:text/csv;charset=utf-8," + escape(str))
-
-
-      var blob = new Blob([str], {
-        type: "text/csv"
-      });
-      var url = URL.createObjectURL(blob);
-      genCSV.href = url;
-    }
-  }, {
-    key: "createDownloadJSONButton",
-    value: function createDownloadJSONButton(data) {
-      var json = JSON.stringify(data);
-      var blob = new Blob([json], {
-        type: "application/json"
-      });
-      var url = URL.createObjectURL(blob);
-      document.querySelector("#genJSON").href = url;
-    }
   }, {
     key: "renderBlocks",
     value: function renderBlocks() {
@@ -137,6 +111,7 @@ function (_Component) {
         });
       }
 
+      console.log(blksToRender);
       var blks = blksToRender.map(function (blk) {
         return _react.default.createElement("div", {
           className: "col-md-6 deal-block",
@@ -207,6 +182,41 @@ function (_Component) {
       });
       return blks;
       console.log(blks);
+    }
+    /* Download button functions */
+
+  }, {
+    key: "DownloadJSON2CSV",
+    value: function DownloadJSON2CSV(objArray) {
+      var array = _typeof(objArray) != 'object' ? JSON.parse(objArray) : objArray;
+      var str = 'Name, Spec, Image, Deposit, Monthly, Months' + '\r\n';
+
+      for (var i = 0; i < array.length; i++) {
+        var line = '';
+
+        for (var index in array[i]) {
+          line += array[i][index] + ',';
+        }
+
+        line.slice(0, line.Length - 1);
+        str += line + '\r\n';
+      }
+
+      var blob = new Blob([str], {
+        type: "text/csv"
+      });
+      var url = URL.createObjectURL(blob);
+      genCSV.href = url;
+    }
+  }, {
+    key: "createDownloadJSONButton",
+    value: function createDownloadJSONButton(data) {
+      var json = JSON.stringify(data);
+      var blob = new Blob([json], {
+        type: "application/json"
+      });
+      var url = URL.createObjectURL(blob);
+      document.querySelector("#genJSON").href = url;
     }
   }, {
     key: "render",
