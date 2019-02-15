@@ -6,3 +6,28 @@
 body {
   font-family: "Varela Round", "Roboto", verdana, sans-serif;
 }
+
+.select {
+  label {
+    display: inline;
+  }
+
+  .form-control {
+    display: inline;
+    width: 100px;
+  }
+}
+
+.generate-links {
+  background: white;
+  width: 100%;
+  padding: 24px;
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+
+  .btn {
+    display: inline;
+    margin-right: 7px;
+  }
+}
