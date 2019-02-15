@@ -10,7 +10,7 @@ class Data extends Component {
   }
 
   componentDidMount() {
-    let inputs = document.querySelectorAll("input")
+    let inputs = document.querySelectorAll("input:not(.chooseNumber)")
     let blocks = document.querySelectorAll(".deal-block")
     let _this = this
     let links = document.querySelector(".generate-links")
@@ -19,12 +19,16 @@ class Data extends Component {
     let data = []
     let x
 
-    dealAmount.addEventListener("change", function() {
+    dealAmount.addEventListener("keyup", function() {
       _this.setState({
         dealAmount: dealAmount.value
       })
       let inputs = document.querySelectorAll("input")
-      let blocks = document.querySelectorAll(".deal-block")
+      data.length = _this.state.dealAmount
+      _this.createDownloadJSONButton(data)
+      genCSV.addEventListener("click", function(e) {
+        _this.DownloadJSON2CSV(data)
+      })
     })
 
     for(let i = 0; i < inputs.length; i++) {

@@ -49,7 +49,7 @@ function (_Component) {
   _createClass(Data, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var inputs = document.querySelectorAll("input");
+      var inputs = document.querySelectorAll("input:not(.chooseNumber)");
       var blocks = document.querySelectorAll(".deal-block");
 
       var _this = this;
@@ -59,13 +59,19 @@ function (_Component) {
       var dealAmount = document.getElementById("numberOfDeals");
       var data = [];
       var x;
-      dealAmount.addEventListener("change", function () {
+      dealAmount.addEventListener("keyup", function () {
         _this.setState({
           dealAmount: dealAmount.value
         });
 
         var inputs = document.querySelectorAll("input");
-        var blocks = document.querySelectorAll(".deal-block");
+        data.length = _this.state.dealAmount;
+
+        _this.createDownloadJSONButton(data);
+
+        genCSV.addEventListener("click", function (e) {
+          _this.DownloadJSON2CSV(data);
+        });
       });
 
       for (var i = 0; i < inputs.length; i++) {
