@@ -202,7 +202,7 @@ function (_Component) {
     key: "DownloadJSON2CSV",
     value: function DownloadJSON2CSV(objArray) {
       var array = _typeof(objArray) != 'object' ? JSON.parse(objArray) : objArray;
-      var str = 'Name, Spec, Image, Deposit, Monthly, Months' + '\r\n';
+      var str = 'Name, Spec, Image, Deposit, Monthly, Months, USP' + '\r\n';
 
       for (var i = 0; i < array.length; i++) {
         var line = '';

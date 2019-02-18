@@ -108,7 +108,7 @@ class Data extends Component {
   /* Download button functions */
   DownloadJSON2CSV(objArray) {
     let array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray
-    let str = 'Name, Spec, Image, Deposit, Monthly, Months' + '\r\n'
+    let str = 'Name, Spec, Image, Deposit, Monthly, Months, USP' + '\r\n'
 
     for (let i = 0; i < array.length; i++) {
       let line = ''
