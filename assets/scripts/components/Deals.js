@@ -89,7 +89,8 @@ function (_Component) {
               "Image": document.querySelector("#image" + (x + 1)).value,
               "Monthly": parseInt(document.querySelector("#monthly" + (x + 1)).value),
               "Deposit": parseInt(document.querySelector("#deposit" + (x + 1)).value),
-              "Months": parseInt(document.querySelector("#months" + (x + 1)).value)
+              "Months": parseInt(document.querySelector("#months" + (x + 1)).value),
+              "USP": parseInt(document.querySelector("#usp" + (x + 1)).value)
             });
           }
 
@@ -170,6 +171,16 @@ function (_Component) {
           type: "text",
           name: "Image",
           id: "image" + blk.number,
+          className: "d-block form-control"
+        })), _react.default.createElement("div", {
+          className: "form-group d-block"
+        }, _react.default.createElement("label", {
+          htmlFor: "usp" + blk.number,
+          className: "d-block mb-0"
+        }, "USP (e.g Quick deliver or Special offer)"), _react.default.createElement("input", {
+          type: "text",
+          name: "USP",
+          id: "usp" + blk.number,
           className: "d-block form-control"
         })), _react.default.createElement("div", {
           className: "form-group d-block"

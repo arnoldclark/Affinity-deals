@@ -46,7 +46,8 @@ class Data extends Component {
               "Image": document.querySelector("#image" + (x+1)).value,
               "Monthly": parseInt(document.querySelector("#monthly" + (x+1)).value),
               "Deposit": parseInt(document.querySelector("#deposit" + (x+1)).value),
-              "Months": parseInt(document.querySelector("#months" + (x+1)).value)
+              "Months": parseInt(document.querySelector("#months" + (x+1)).value),
+              "USP": parseInt(document.querySelector("#usp" + (x+1)).value)
             }
           )
         }
@@ -89,6 +90,10 @@ class Data extends Component {
           <div className="form-group d-block">
             <label htmlFor={"image" + blk.number} className="d-block mb-0">Image URL</label>
             <input type="text" name="Image" id={"image" + blk.number} className="d-block form-control" />
+          </div>
+          <div className="form-group d-block">
+            <label htmlFor={"usp" + blk.number} className="d-block mb-0">USP (e.g Quick deliver or Special offer)</label>
+            <input type="text" name="USP" id={"usp" + blk.number} className="d-block form-control" />
           </div>
           <div className="form-group d-block">
             <label htmlFor={"months" + blk.number} className="d-block mb-0">Term (months)</label>
