@@ -41,7 +41,8 @@ function (_Component) {
     _this2 = _possibleConstructorReturn(this, _getPrototypeOf(Data).call(this, props));
     _this2.state = {
       inputTrue: false,
-      dealAmount: document.getElementById("numberOfDeals").value
+      dealAmount: document.getElementById("numberOfDeals").value,
+      showHTML: false
     };
     return _this2;
   }
@@ -56,6 +57,7 @@ function (_Component) {
 
       var links = document.querySelector(".generate-links");
       var genCSV = document.getElementById("genCSV");
+      var genEmail = document.getElementById("genEmail");
       var dealAmount = document.getElementById("numberOfDeals");
       var data = [];
       var x;
@@ -72,6 +74,10 @@ function (_Component) {
         genCSV.addEventListener("click", function (e) {
           _this.DownloadJSON2CSV(data);
         });
+        genEmail.addEventListener("click", function (e) {
+          // e.preventDefault();
+          _this.downloadHTML(data);
+        });
       });
 
       for (var i = 0; i < inputs.length; i++) {
@@ -86,6 +92,8 @@ function (_Component) {
             data.push({
               "Name": document.querySelector("#name" + (x + 1)).value,
               "Spec": document.querySelector("#variant" + (x + 1)).value,
+              "C02": document.querySelector("#c02" + (x + 1)).value,
+              "MPG": document.querySelector("#mpg" + (x + 1)).value,
               "Image": document.querySelector("#image" + (x + 1)).value,
               "Monthly": parseInt(document.querySelector("#monthly" + (x + 1)).value),
               "Deposit": parseInt(document.querySelector("#deposit" + (x + 1)).value),
@@ -94,12 +102,18 @@ function (_Component) {
             });
           }
 
+          console.log(data);
+
           _this.createDownloadJSONButton(data);
         });
       }
 
       genCSV.addEventListener("click", function (e) {
         _this.DownloadJSON2CSV(data);
+      });
+      genEmail.addEventListener("click", function (e) {
+        // e.preventDefault();
+        _this.downloadHTML(data);
       });
     }
     /* Render blocks function */
@@ -143,26 +157,58 @@ function (_Component) {
           id: "variant" + blk.number,
           className: "d-block form-control"
         })), _react.default.createElement("div", {
+          class: "row"
+        }, _react.default.createElement("div", {
+          class: "col"
+        }, _react.default.createElement("div", {
+          className: "form-group d-block"
+        }, _react.default.createElement("label", {
+          htmlFor: "c02" + blk.number,
+          className: "d-block mb-0"
+        }, "C0\u2082"), _react.default.createElement("input", {
+          type: "text",
+          name: "c02",
+          id: "c02" + blk.number,
+          className: "d-block form-control"
+        }))), _react.default.createElement("div", {
+          class: "col"
+        }, _react.default.createElement("div", {
+          className: "form-group d-block"
+        }, _react.default.createElement("label", {
+          htmlFor: "mpg" + blk.number,
+          className: "d-block mb-0"
+        }, "MPG"), _react.default.createElement("input", {
+          type: "text",
+          name: "mpg",
+          id: "mpg" + blk.number,
+          className: "d-block form-control"
+        })))), _react.default.createElement("div", {
+          class: "row"
+        }, _react.default.createElement("div", {
+          class: "col"
+        }, _react.default.createElement("div", {
           className: "form-group d-block"
         }, _react.default.createElement("label", {
           htmlFor: "deposit" + blk.number,
           className: "d-block mb-0"
-        }, "Deposit (Dont include \xA3)"), _react.default.createElement("input", {
+        }, "Deposit (\xA3)"), _react.default.createElement("input", {
           type: "number",
           name: "Deposit",
           id: "deposit" + blk.number,
           className: "d-block form-control"
-        })), _react.default.createElement("div", {
+        }))), _react.default.createElement("div", {
+          class: "col"
+        }, _react.default.createElement("div", {
           className: "form-group d-block"
         }, _react.default.createElement("label", {
           htmlFor: "monthly" + blk.number,
           className: "d-block mb-0"
-        }, "Monthly (Dont include \xA3)"), _react.default.createElement("input", {
+        }, "Monthly (\xA3)"), _react.default.createElement("input", {
           type: "number",
           name: "Monthly",
           id: "monthly" + blk.number,
           className: "d-block form-control"
-        })), _react.default.createElement("div", {
+        })))), _react.default.createElement("div", {
           className: "form-group d-block"
         }, _react.default.createElement("label", {
           htmlFor: "image" + blk.number,
@@ -173,16 +219,22 @@ function (_Component) {
           id: "image" + blk.number,
           className: "d-block form-control"
         })), _react.default.createElement("div", {
+          class: "row"
+        }, _react.default.createElement("div", {
+          class: "col"
+        }, _react.default.createElement("div", {
           className: "form-group d-block"
         }, _react.default.createElement("label", {
           htmlFor: "usp" + blk.number,
           className: "d-block mb-0"
-        }, "USP (e.g Quick deliver or Special offer)"), _react.default.createElement("input", {
+        }, "USP"), _react.default.createElement("input", {
           type: "text",
           name: "USP",
           id: "usp" + blk.number,
           className: "d-block form-control"
-        })), _react.default.createElement("div", {
+        }))), _react.default.createElement("div", {
+          class: "col"
+        }, _react.default.createElement("div", {
           className: "form-group d-block"
         }, _react.default.createElement("label", {
           htmlFor: "months" + blk.number,
@@ -192,7 +244,7 @@ function (_Component) {
           name: "Months",
           id: "months" + blk.number,
           className: "d-block form-control"
-        }))));
+        }))))));
       });
       return blks;
     }
@@ -202,7 +254,7 @@ function (_Component) {
     key: "DownloadJSON2CSV",
     value: function DownloadJSON2CSV(objArray) {
       var array = _typeof(objArray) != 'object' ? JSON.parse(objArray) : objArray;
-      var str = 'Name, Spec, Image, Monthly, Deposit, Months, USP' + '\r\n';
+      var str = 'Name, Spec, C02, MPG, Image, Monthly, Deposit, Months, USP' + '\r\n';
 
       for (var i = 0; i < array.length; i++) {
         var line = '';
@@ -232,6 +284,30 @@ function (_Component) {
       document.querySelector("#genJSON").href = url;
     }
   }, {
+    key: "downloadHTML",
+    value: function downloadHTML(data) {
+      var str = "";
+
+      for (var i = 0; i < data.length; i++) {
+        str += "<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr class=\"article\">\n          <td class=\"wrapper content\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-left\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <img width=\"215\" label=\"Car image\" src=\"".concat(data[i].Image, "\" alt=\"").concat(data[i].Name, "\" />\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n              </tr>\n            </table>\n          </td>\n          <td class=\"wrapper content last\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-right\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <h5 class=\"mobile-center make-model\">").concat(data[i].Name, "</h5>\n                          <p class=\"mobile-center variant\">").concat(data[i].Spec, "</p>\n                          <p class=\"mobile-center emissions\">").concat(data[i].mpg, " mpg | ").concat(data[i].c02, " g/km CO\u2082</p>\n                          <p class=\"from-price mobile-center\">First rental<br><strong><span class=\"from-price--number\">\xA3").concat(data[i].Deposit, "</span></strong></p>\n                          <p class=\"saving mobile-center\">Monthly rental<br><strong><span class=\"saving--number\">\xA3").concat(data[i].Monthly, "</span></strong></p>\n                          <a href=\"https://autocentre.acvm.com/cgi-bin/tools/?type=affinity\" class=\"blue-link mobile-center link\" color=\"#00a3e0\">Find out more</a>\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n                <td class=\"expander\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr>\n          <td class=\"wrapper content last\">\n            <table class=\"twelve columns\">\n              <tr>\n                <td class=\"text-pad\">\n                  <hr>\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n");
+      }
+
+      var htmlblob = new Blob([str], {
+        type: "text/html"
+      });
+      var htmlurl = URL.createObjectURL(htmlblob);
+      document.querySelector("#genEmail").href = htmlurl;
+      this.setState({
+        output: str,
+        showHTML: true
+      });
+    }
+  }, {
+    key: "outputCode",
+    value: function outputCode() {
+      return this.state.output;
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", {
@@ -250,7 +326,12 @@ function (_Component) {
         id: "genCSV",
         className: "btn btn-info",
         download: "affinity-deals.csv"
-      }, "Generate CSV"))));
+      }, "Generate CSV"), _react.default.createElement("a", {
+        href: "#",
+        id: "genEmail",
+        className: "btn btn-dark",
+        download: "affinity-deals.html"
+      }, "Generate HTML"))));
     }
   }]);
 
