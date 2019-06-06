@@ -4,11 +4,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -102,8 +102,6 @@ function (_Component) {
             });
           }
 
-          console.log(data);
-
           _this.createDownloadJSONButton(data);
         });
       }
@@ -131,119 +129,119 @@ function (_Component) {
       }
 
       var blks = blksToRender.map(function (blk) {
-        return _react.default.createElement("div", {
-          className: "col-md-6 deal-block",
+        return _react["default"].createElement("div", {
+          className: "sm:ch-col--12 md:ch-col--6 deal-block",
           key: blk.number
-        }, _react.default.createElement("div", {
-          className: "mb-4 border border-info rounded p-2 p-sm-4"
-        }, _react.default.createElement("h5", null, "Deal " + blk.number + ":"), _react.default.createElement("div", {
-          className: "form-group d-block"
-        }, _react.default.createElement("label", {
+        }, _react["default"].createElement("div", {
+          className: "ch-mb--4 ch-ba--1 ch-bc--grey-3 ch-rounded ch-pa--2 sm:ch-pa--4 ch-bg--grey-1"
+        }, _react["default"].createElement("h3", null, "Deal " + blk.number + ":"), _react["default"].createElement("div", {
+          className: "ch-form__group ch-display--block"
+        }, _react["default"].createElement("label", {
           htmlFor: "name" + blk.number,
-          className: "d-block mb-0"
-        }, "Car name"), _react.default.createElement("input", {
+          className: "ch-display--block ch-mb--0"
+        }, "Car name"), _react["default"].createElement("input", {
           type: "text",
           name: "Name",
           id: "name" + blk.number,
-          className: "d-block form-control"
-        })), _react.default.createElement("div", {
-          className: "form-group d-block"
-        }, _react.default.createElement("label", {
+          className: "ch-display--block ch-form__control"
+        })), _react["default"].createElement("div", {
+          className: "ch-form__group ch-display--block"
+        }, _react["default"].createElement("label", {
           htmlFor: "variant" + blk.number,
-          className: "d-block mb-0"
-        }, "Variant"), _react.default.createElement("input", {
+          className: "ch-display--block ch-mb--0"
+        }, "Variant"), _react["default"].createElement("input", {
           type: "text",
           name: "Spec",
           id: "variant" + blk.number,
-          className: "d-block form-control"
-        })), _react.default.createElement("div", {
-          class: "row"
-        }, _react.default.createElement("div", {
-          class: "col"
-        }, _react.default.createElement("div", {
-          className: "form-group d-block"
-        }, _react.default.createElement("label", {
+          className: "ch-display--block ch-form__control"
+        })), _react["default"].createElement("div", {
+          className: "ch-row"
+        }, _react["default"].createElement("div", {
+          className: "xs:ch-col--6 ch-mh--0"
+        }, _react["default"].createElement("div", {
+          className: "ch-form__group ch-display--block"
+        }, _react["default"].createElement("label", {
           htmlFor: "c02" + blk.number,
-          className: "d-block mb-0"
-        }, "C0\u2082"), _react.default.createElement("input", {
+          className: "ch-display--block ch-mb--0"
+        }, "C0\u2082"), _react["default"].createElement("input", {
           type: "text",
           name: "c02",
           id: "c02" + blk.number,
-          className: "d-block form-control"
-        }))), _react.default.createElement("div", {
-          class: "col"
-        }, _react.default.createElement("div", {
-          className: "form-group d-block"
-        }, _react.default.createElement("label", {
+          className: "ch-display--block ch-form__control"
+        }))), _react["default"].createElement("div", {
+          className: "xs:ch-col--6 ch-mh--0"
+        }, _react["default"].createElement("div", {
+          className: "ch-form__group ch-display--block"
+        }, _react["default"].createElement("label", {
           htmlFor: "mpg" + blk.number,
-          className: "d-block mb-0"
-        }, "MPG"), _react.default.createElement("input", {
+          className: "ch-display--block ch-mb--0"
+        }, "MPG"), _react["default"].createElement("input", {
           type: "text",
           name: "mpg",
           id: "mpg" + blk.number,
-          className: "d-block form-control"
-        })))), _react.default.createElement("div", {
-          class: "row"
-        }, _react.default.createElement("div", {
-          class: "col"
-        }, _react.default.createElement("div", {
-          className: "form-group d-block"
-        }, _react.default.createElement("label", {
+          className: "ch-display--block ch-form__control"
+        })))), _react["default"].createElement("div", {
+          className: "ch-row"
+        }, _react["default"].createElement("div", {
+          className: "xs:ch-col--6 ch-mh--0"
+        }, _react["default"].createElement("div", {
+          className: "ch-form__group ch-display--block"
+        }, _react["default"].createElement("label", {
           htmlFor: "deposit" + blk.number,
-          className: "d-block mb-0"
-        }, "Deposit (\xA3)"), _react.default.createElement("input", {
+          className: "ch-display--block ch-mb--0"
+        }, "Deposit (\xA3)"), _react["default"].createElement("input", {
           type: "number",
           name: "Deposit",
           id: "deposit" + blk.number,
-          className: "d-block form-control"
-        }))), _react.default.createElement("div", {
-          class: "col"
-        }, _react.default.createElement("div", {
-          className: "form-group d-block"
-        }, _react.default.createElement("label", {
+          className: "ch-display--block ch-form__control"
+        }))), _react["default"].createElement("div", {
+          className: "xs:ch-col--6 ch-mh--0"
+        }, _react["default"].createElement("div", {
+          className: "ch-form__group ch-display--block"
+        }, _react["default"].createElement("label", {
           htmlFor: "monthly" + blk.number,
-          className: "d-block mb-0"
-        }, "Monthly (\xA3)"), _react.default.createElement("input", {
+          className: "ch-display--block ch-mb--0"
+        }, "Monthly (\xA3)"), _react["default"].createElement("input", {
           type: "number",
           name: "Monthly",
           id: "monthly" + blk.number,
-          className: "d-block form-control"
-        })))), _react.default.createElement("div", {
-          className: "form-group d-block"
-        }, _react.default.createElement("label", {
+          className: "ch-display--block ch-form__control"
+        })))), _react["default"].createElement("div", {
+          className: "ch-form__group ch-display--block"
+        }, _react["default"].createElement("label", {
           htmlFor: "image" + blk.number,
-          className: "d-block mb-0"
-        }, "Image URL"), _react.default.createElement("input", {
+          className: "ch-display--block ch-mb--0"
+        }, "Image URL"), _react["default"].createElement("input", {
           type: "text",
           name: "Image",
           id: "image" + blk.number,
-          className: "d-block form-control"
-        })), _react.default.createElement("div", {
-          class: "row"
-        }, _react.default.createElement("div", {
-          class: "col"
-        }, _react.default.createElement("div", {
-          className: "form-group d-block"
-        }, _react.default.createElement("label", {
+          className: "ch-display--block ch-form__control"
+        })), _react["default"].createElement("div", {
+          className: "ch-row"
+        }, _react["default"].createElement("div", {
+          className: "xs:ch-col--6 ch-mh--0"
+        }, _react["default"].createElement("div", {
+          className: "ch-form__group ch-display--block"
+        }, _react["default"].createElement("label", {
           htmlFor: "usp" + blk.number,
-          className: "d-block mb-0"
-        }, "USP"), _react.default.createElement("input", {
+          className: "ch-display--block ch-mb--0"
+        }, "USP"), _react["default"].createElement("input", {
           type: "text",
           name: "USP",
           id: "usp" + blk.number,
-          className: "d-block form-control"
-        }))), _react.default.createElement("div", {
-          class: "col"
-        }, _react.default.createElement("div", {
-          className: "form-group d-block"
-        }, _react.default.createElement("label", {
+          className: "ch-display--block ch-form__control"
+        }))), _react["default"].createElement("div", {
+          className: "xs:ch-col--6 ch-mh--0"
+        }, _react["default"].createElement("div", {
+          className: "ch-form__group ch-display--block"
+        }, _react["default"].createElement("label", {
           htmlFor: "months" + blk.number,
-          className: "d-block mb-0"
-        }, "Term (months)"), _react.default.createElement("input", {
+          className: "ch-display--block ch-mb--0"
+        }, "Term (months)"), _react["default"].createElement("input", {
           type: "number",
           name: "Months",
           id: "months" + blk.number,
-          className: "d-block form-control"
+          className: "ch-display--block ch-form__control"
         }))))));
       });
       return blks;
@@ -289,7 +287,7 @@ function (_Component) {
       var str = "";
 
       for (var i = 0; i < data.length; i++) {
-        str += "<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr class=\"article\">\n          <td class=\"wrapper content\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-left\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <img width=\"215\" label=\"Car image\" src=\"".concat(data[i].Image, "\" alt=\"").concat(data[i].Name, "\" />\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n              </tr>\n            </table>\n          </td>\n          <td class=\"wrapper content last\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-right\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <h5 class=\"mobile-center make-model\">").concat(data[i].Name, "</h5>\n                          <p class=\"mobile-center variant\">").concat(data[i].Spec, "</p>\n                          <p class=\"mobile-center emissions\">").concat(data[i].mpg, " mpg | ").concat(data[i].c02, " g/km CO\u2082</p>\n                          <p class=\"from-price mobile-center\">First rental<br><strong><span class=\"from-price--number\">\xA3").concat(data[i].Deposit, "</span></strong></p>\n                          <p class=\"saving mobile-center\">Monthly rental<br><strong><span class=\"saving--number\">\xA3").concat(data[i].Monthly, "</span></strong></p>\n                          <a href=\"https://autocentre.acvm.com/cgi-bin/tools/?type=affinity\" class=\"blue-link mobile-center link\" color=\"#00a3e0\">Find out more</a>\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n                <td class=\"expander\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr>\n          <td class=\"wrapper content last\">\n            <table class=\"twelve columns\">\n              <tr>\n                <td class=\"text-pad\">\n                  <hr>\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n");
+        str += "<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr class=\"article\">\n          <td class=\"wrapper content\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-left\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <img width=\"215\" label=\"Car image\" src=\"".concat(data[i].Image, "\" alt=\"").concat(data[i].Name, "\" class=\"center\"/>\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n              </tr>\n            </table>\n          </td>\n          <td class=\"wrapper content last\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-right\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <h5 class=\"mobile-center make-model\">").concat(data[i].Name, "</h5>\n                          <p class=\"mobile-center variant\">").concat(data[i].Spec, "</p>\n                          <p class=\"mobile-center emissions\">").concat(data[i].mpg, " mpg | ").concat(data[i].c02, " g/km CO\u2082</p>\n                          <p class=\"from-price mobile-center\">First rental<br><strong><span class=\"from-price--number\">\xA3").concat(data[i].Deposit, "</span></strong></p>\n                          <p class=\"saving mobile-center\">Monthly rental<br><strong><span class=\"saving--number\">\xA3").concat(data[i].Monthly, "</span></strong></p>\n                          <a href=\"https://autocentre.acvm.com/cgi-bin/tools/?type=affinity\" class=\"blue-link mobile-center link\" color=\"#00a3e0\">Find out more</a>\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n                <td class=\"expander\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr>\n          <td class=\"wrapper content last\">\n            <table class=\"twelve columns\">\n              <tr>\n                <td class=\"text-pad\">\n                  <hr>\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n");
       }
 
       var htmlblob = new Blob([str], {
@@ -310,26 +308,30 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", {
-        className: "row"
-      }, this.renderBlocks(), _react.default.createElement("div", {
-        className: "generate-links " + (this.state.inputTrue ? 'd-block' : 'd-none')
-      }, _react.default.createElement("div", {
-        className: "form-group d-block"
-      }, _react.default.createElement("a", {
+      return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("div", {
+        className: "form"
+      }, _react["default"].createElement("div", {
+        className: "ch-container"
+      }, _react["default"].createElement("div", {
+        className: "ch-row"
+      }, this.renderBlocks()))), _react["default"].createElement("div", {
+        className: "generate-links ch-bt--1 ch-bc--grey-3"
+      }, _react["default"].createElement("div", {
+        className: "ch-form__group ch-display--block"
+      }, _react["default"].createElement("a", {
         href: "#",
         id: "genJSON",
-        className: "btn btn-primary",
+        className: "ch-mh--2 ch-btn ch-btn--success",
         download: "affinity-deals.json"
-      }, "Generate JSON"), _react.default.createElement("a", {
+      }, "Generate JSON"), _react["default"].createElement("a", {
         href: "#",
         id: "genCSV",
-        className: "btn btn-info",
+        className: "ch-mh--2 ch-btn ch-btn--secondary",
         download: "affinity-deals.csv"
-      }, "Generate CSV"), _react.default.createElement("a", {
+      }, "Generate CSV"), _react["default"].createElement("a", {
         href: "#",
         id: "genEmail",
-        className: "btn btn-dark",
+        className: "ch-mh--2 ch-btn ch-btn--primary",
         download: "affinity-deals.html"
       }, "Generate HTML"))));
     }
@@ -339,7 +341,7 @@ function (_Component) {
 }(_react.Component);
 
 var _default = Data;
-exports.default = _default;
+exports["default"] = _default;
 
 },{"react":8}],2:[function(require,module,exports){
 /*
@@ -742,7 +744,7 @@ module.exports = ReactPropTypesSecret;
 
 },{}],6:[function(require,module,exports){
 (function (process){
-/** @license React v16.8.1
+/** @license React v16.8.6
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -764,7 +766,7 @@ var checkPropTypes = require('prop-types/checkPropTypes');
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.8.1';
+var ReactVersion = '16.8.6';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -2177,7 +2179,7 @@ function memo(type, compare) {
 
 function resolveDispatcher() {
   var dispatcher = ReactCurrentDispatcher.current;
-  !(dispatcher !== null) ? invariant(false, 'Hooks can only be called inside the body of a function component. (https://fb.me/react-invalid-hook-call)') : void 0;
+  !(dispatcher !== null) ? invariant(false, 'Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.') : void 0;
   return dispatcher;
 }
 
@@ -2647,7 +2649,7 @@ module.exports = react;
 }).call(this,require('_process'))
 
 },{"_process":3,"object-assign":2,"prop-types/checkPropTypes":4}],7:[function(require,module,exports){
-/** @license React v16.8.1
+/** @license React v16.8.6
  * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -2666,11 +2668,11 @@ function da(a,b){return{$$typeof:p,type:a.type,key:b,ref:a.ref,props:a.props,_ow
 function R(a){a.result=null;a.keyPrefix=null;a.func=null;a.context=null;a.count=0;10>P.length&&P.push(a)}
 function S(a,b,d,c){var e=typeof a;if("undefined"===e||"boolean"===e)a=null;var g=!1;if(null===a)g=!0;else switch(e){case "string":case "number":g=!0;break;case "object":switch(a.$$typeof){case p:case q:g=!0}}if(g)return d(c,a,""===b?"."+T(a,0):b),1;g=0;b=""===b?".":b+":";if(Array.isArray(a))for(var h=0;h<a.length;h++){e=a[h];var f=b+T(e,h);g+=S(e,f,d,c)}else if(null===a||"object"!==typeof a?f=null:(f=A&&a[A]||a["@@iterator"],f="function"===typeof f?f:null),"function"===typeof f)for(a=f.call(a),h=
 0;!(e=a.next()).done;)e=e.value,f=b+T(e,h++),g+=S(e,f,d,c);else"object"===e&&(d=""+a,B("31","[object Object]"===d?"object with keys {"+Object.keys(a).join(", ")+"}":d,""));return g}function U(a,b,d){return null==a?0:S(a,"",b,d)}function T(a,b){return"object"===typeof a&&null!==a&&null!=a.key?escape(a.key):b.toString(36)}function ea(a,b){a.func.call(a.context,b,a.count++)}
-function fa(a,b,d){var c=a.result,e=a.keyPrefix;a=a.func.call(a.context,b,a.count++);Array.isArray(a)?V(a,c,d,function(a){return a}):null!=a&&(N(a)&&(a=da(a,e+(!a.key||b&&b.key===a.key?"":(""+a.key).replace(O,"$&/")+"/")+d)),c.push(a))}function V(a,b,d,c,e){var g="";null!=d&&(g=(""+d).replace(O,"$&/")+"/");b=Q(b,g,c,e);U(a,fa,b);R(b)}function W(){var a=I.current;null===a?B("307"):void 0;return a}
+function fa(a,b,d){var c=a.result,e=a.keyPrefix;a=a.func.call(a.context,b,a.count++);Array.isArray(a)?V(a,c,d,function(a){return a}):null!=a&&(N(a)&&(a=da(a,e+(!a.key||b&&b.key===a.key?"":(""+a.key).replace(O,"$&/")+"/")+d)),c.push(a))}function V(a,b,d,c,e){var g="";null!=d&&(g=(""+d).replace(O,"$&/")+"/");b=Q(b,g,c,e);U(a,fa,b);R(b)}function W(){var a=I.current;null===a?B("321"):void 0;return a}
 var X={Children:{map:function(a,b,d){if(null==a)return a;var c=[];V(a,c,null,b,d);return c},forEach:function(a,b,d){if(null==a)return a;b=Q(null,null,b,d);U(a,ea,b);R(b)},count:function(a){return U(a,function(){return null},null)},toArray:function(a){var b=[];V(a,b,null,function(a){return a});return b},only:function(a){N(a)?void 0:B("143");return a}},createRef:function(){return{current:null}},Component:E,PureComponent:G,createContext:function(a,b){void 0===b&&(b=null);a={$$typeof:w,_calculateChangedBits:b,
 _currentValue:a,_currentValue2:a,_threadCount:0,Provider:null,Consumer:null};a.Provider={$$typeof:v,_context:a};return a.Consumer=a},forwardRef:function(a){return{$$typeof:y,render:a}},lazy:function(a){return{$$typeof:ba,_ctor:a,_status:-1,_result:null}},memo:function(a,b){return{$$typeof:aa,type:a,compare:void 0===b?null:b}},useCallback:function(a,b){return W().useCallback(a,b)},useContext:function(a,b){return W().useContext(a,b)},useEffect:function(a,b){return W().useEffect(a,b)},useImperativeHandle:function(a,
 b,d){return W().useImperativeHandle(a,b,d)},useDebugValue:function(){},useLayoutEffect:function(a,b){return W().useLayoutEffect(a,b)},useMemo:function(a,b){return W().useMemo(a,b)},useReducer:function(a,b,d){return W().useReducer(a,b,d)},useRef:function(a){return W().useRef(a)},useState:function(a){return W().useState(a)},Fragment:r,StrictMode:t,Suspense:z,createElement:M,cloneElement:function(a,b,d){null===a||void 0===a?B("267",a):void 0;var c=void 0,e=k({},a.props),g=a.key,h=a.ref,f=a._owner;if(null!=
-b){void 0!==b.ref&&(h=b.ref,f=J.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)K.call(b,c)&&!L.hasOwnProperty(c)&&(e[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)e.children=d;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];e.children=l}return{$$typeof:p,type:a.type,key:g,ref:h,props:e,_owner:f}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},isValidElement:N,version:"16.8.1",
+b){void 0!==b.ref&&(h=b.ref,f=J.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)K.call(b,c)&&!L.hasOwnProperty(c)&&(e[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)e.children=d;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];e.children=l}return{$$typeof:p,type:a.type,key:g,ref:h,props:e,_owner:f}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},isValidElement:N,version:"16.8.6",
 unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentDispatcher:I,ReactCurrentOwner:J,assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default||Z;
 
 },{"object-assign":2}],8:[function(require,module,exports){

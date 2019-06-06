@@ -5,37 +5,33 @@ meta_description: Export your car deals to json
 current: home
 ---
 
-<div class="heading py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <img src="{{ site.baseurl }}/assets/images/database--add.svg" width="50" alt="Add your data" />
+<div class="heading ch-pv--5">
+  <div class="ch-container">
+    <div class="ch-row">
+      <div class="sm:ch-col--12 ch-text--center">
+        <img src="{{ site.baseurl }}/assets/images/ac-logo.svg" width="350" alt="Arnold Clark" class="ch-display--block ch-mh--auto ch-mb--4" />
+        <img src="{{ site.baseurl }}/assets/images/database--add.svg" width="50" alt="Add your data" class="ch-display--block ch-mh--auto" />
         <h1>Add your deals...</h1>
         <a href="https://github.com/eli-nathan/Deals" target="_blank" class="badge badge-dark">
           <i class="fa fa-github" aria-hidden="true"></i>
-          &nbsp; View on github
+          View on github
         </a>
+        &nbsp;
+        &nbsp;
         <a href="{{ site.baseurl }}/help" target="_blank" class="badge badge-info">
           <i class="fa fa-info-circle" aria-hidden="true"></i>
-          &nbsp; Help
+          Help
         </a>
       </div>
-      <div class="col-sm-12 text-center pt-3">
-        <div class="form-group select">
-          <label for="numberOfDeals">Number of deals</label>
-          <input type="number" class="form-control chooseNumber" id="numberOfDeals" value="4">
+      <div class="sm:ch-col--12 ch-text--center ch-pt--3">
+        <div class="ch-form__group select">
+          <label for="numberOfDeals" class="ch-form__control-label">Number of deals</label>
+          <input type="number" class="ch-form__control chooseNumber" id="numberOfDeals" value="4">
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="form">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div id="data-boxes"></div>
-      </div>
-    </div>
-  </div>
-</div>
+
+<div id="data-boxes"></div>

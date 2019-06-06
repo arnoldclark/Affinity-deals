@@ -1,20 +1,33 @@
-// Bootstrap
-@import 'bootstrap/bootstrap.scss';
-
-@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
 body {
-  font-family: "Varela Round", "Roboto", verdana, sans-serif;
+  font-family: "Gotham", "Montserrat", "Roboto", verdana, sans-serif;
+  background: #f2f2f2;
 }
+.badge {
+  background: #e5e5e5;
+  border-radius: 3px;
+  padding: 6px 7px;
+  color: #fff;
+  text-decoration: none;
 
+  &-dark {
+    background-color: #2d3737;
+  }
+
+  &-info {
+    background-color: #00A1E0;
+  }
+}
 .select {
   label {
     display: inline;
   }
 
-  .form-control {
+  .ch-form__control {
     display: inline;
     width: 100px;
+    margin-left: 14px;
   }
 }
 
@@ -30,4 +43,9 @@ body {
     display: inline;
     margin-right: 7px;
   }
+}
+
+
+.ch-form__group {
+  margin-bottom: 24px;
 }

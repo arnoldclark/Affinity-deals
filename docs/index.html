@@ -9,55 +9,52 @@
 
 	<meta name="description" content="Export your car deals to json">
 	<meta name="viewport" content="width=device-width">
-	<link rel="shortcut icon" href="/Deals/favicon.ico?v=3">
-	<link rel="canonical" href="https://eli-nathan.github.io/Deals/">
+	<link rel="shortcut icon" href="/favicon.ico?v=3">
+	<link rel="canonical" href="https://eli-nathan.github.io/">
 
   <!-- Font Awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
-	<link rel="stylesheet" href="/Deals/assets/css/darcula-theme.css">
-	<link rel="stylesheet" href="/Deals/assets/css/styles.css">
+	<link rel="stylesheet" href="/assets/css/chassis.css">
+	<link rel="stylesheet" href="/assets/css/chassis-ui.css">
+	<link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>
 
-	<div class="heading py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <img src="/Deals/assets/images/database--add.svg" width="50" alt="Add your data" />
+	<div class="heading ch-pv--5">
+  <div class="ch-container">
+    <div class="ch-row">
+      <div class="sm:ch-col--12 ch-text--center">
+        <img src="/assets/images/ac-logo.svg" width="350" alt="Arnold Clark" class="ch-display--block ch-mh--auto ch-mb--4" />
+        <img src="/assets/images/database--add.svg" width="50" alt="Add your data" class="ch-display--block ch-mh--auto" />
         <h1>Add your deals...</h1>
         <a href="https://github.com/eli-nathan/Deals" target="_blank" class="badge badge-dark">
           <i class="fa fa-github" aria-hidden="true"></i>
-          &nbsp; View on github
+          View on github
         </a>
-        <a href="/Deals/help" target="_blank" class="badge badge-info">
+        &nbsp;
+        &nbsp;
+        <a href="/help" target="_blank" class="badge badge-info">
           <i class="fa fa-info-circle" aria-hidden="true"></i>
-          &nbsp; Help
+          Help
         </a>
       </div>
-      <div class="col-sm-12 text-center pt-3">
-        <div class="form-group select">
-          <label for="numberOfDeals">Number of deals</label>
-          <input type="number" class="form-control chooseNumber" id="numberOfDeals" value="4">
+      <div class="sm:ch-col--12 ch-text--center ch-pt--3">
+        <div class="ch-form__group select">
+          <label for="numberOfDeals" class="ch-form__control-label">Number of deals</label>
+          <input type="number" class="ch-form__control chooseNumber" id="numberOfDeals" value="4">
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="form">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div id="data-boxes"></div>
-      </div>
-    </div>
-  </div>
-</div>
+
+<div id="data-boxes"></div>
 
 
-	 <script src="/Deals/assets/scripts/scripts.js"></script>
+	 <script src="/assets/scripts/scripts.js"></script>
 
 
 </body>

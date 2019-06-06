@@ -60,7 +60,6 @@ class Data extends Component {
             }
           )
         }
-        console.log(data)
         _this.createDownloadJSONButton(data)
       })
     }
@@ -83,60 +82,60 @@ class Data extends Component {
       blksToRender.push({"number": i+1})
     }
     const blks = blksToRender.map(blk => (
-      <div className="col-md-6 deal-block" key={blk.number}>
-        <div className="mb-4 border border-info rounded p-2 p-sm-4">
-          <h5>{"Deal " + blk.number + ":"}</h5>
-          <div className="form-group d-block">
-            <label htmlFor={"name" + blk.number} className="d-block mb-0">Car name</label>
-            <input type="text" name="Name" id={"name" + blk.number} className="d-block form-control" />
+      <div className="sm:ch-col--12 md:ch-col--6 deal-block" key={blk.number}>
+        <div className="ch-mb--4 ch-ba--1 ch-bc--grey-3 ch-rounded ch-pa--2 sm:ch-pa--4 ch-bg--grey-1">
+          <h3>{"Deal " + blk.number + ":"}</h3>
+          <div className="ch-form__group ch-display--block">
+            <label htmlFor={"name" + blk.number} className="ch-display--block ch-mb--0">Car name</label>
+            <input type="text" name="Name" id={"name" + blk.number} className="ch-display--block ch-form__control" />
           </div>
-          <div className="form-group d-block">
-            <label htmlFor={"variant" + blk.number} className="d-block mb-0">Variant</label>
-            <input type="text" name="Spec" id={"variant" + blk.number} className="d-block form-control" />
+          <div className="ch-form__group ch-display--block">
+            <label htmlFor={"variant" + blk.number} className="ch-display--block ch-mb--0">Variant</label>
+            <input type="text" name="Spec" id={"variant" + blk.number} className="ch-display--block ch-form__control" />
           </div>
-          <div class="row">
-            <div class="col">
-              <div className="form-group d-block">
-                <label htmlFor={"c02" + blk.number} className="d-block mb-0">C0₂</label>
-                <input type="text" name="c02" id={"c02" + blk.number} className="d-block form-control" />
+          <div className="ch-row">
+            <div className="xs:ch-col--6 ch-mh--0">
+              <div className="ch-form__group ch-display--block">
+                <label htmlFor={"c02" + blk.number} className="ch-display--block ch-mb--0">C0₂</label>
+                <input type="text" name="c02" id={"c02" + blk.number} className="ch-display--block ch-form__control" />
               </div>
             </div>
-            <div class="col">
-              <div className="form-group d-block">
-                <label htmlFor={"mpg" + blk.number} className="d-block mb-0">MPG</label>
-                <input type="text" name="mpg" id={"mpg" + blk.number} className="d-block form-control" />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div className="form-group d-block">
-                <label htmlFor={"deposit" + blk.number} className="d-block mb-0">Deposit (£)</label>
-                <input type="number" name="Deposit" id={"deposit" + blk.number} className="d-block form-control" />
-              </div>
-            </div>
-            <div class="col">
-              <div className="form-group d-block">
-                <label htmlFor={"monthly" + blk.number} className="d-block mb-0">Monthly (£)</label>
-                <input type="number" name="Monthly" id={"monthly" + blk.number} className="d-block form-control" />
+            <div className="xs:ch-col--6 ch-mh--0">
+              <div className="ch-form__group ch-display--block">
+                <label htmlFor={"mpg" + blk.number} className="ch-display--block ch-mb--0">MPG</label>
+                <input type="text" name="mpg" id={"mpg" + blk.number} className="ch-display--block ch-form__control" />
               </div>
             </div>
           </div>
-          <div className="form-group d-block">
-            <label htmlFor={"image" + blk.number} className="d-block mb-0">Image URL</label>
-            <input type="text" name="Image" id={"image" + blk.number} className="d-block form-control" />
-          </div>
-          <div class="row">
-            <div class="col">
-              <div className="form-group d-block">
-                <label htmlFor={"usp" + blk.number} className="d-block mb-0">USP</label>
-                <input type="text" name="USP" id={"usp" + blk.number} className="d-block form-control" />
+          <div className="ch-row">
+            <div className="xs:ch-col--6 ch-mh--0">
+              <div className="ch-form__group ch-display--block">
+                <label htmlFor={"deposit" + blk.number} className="ch-display--block ch-mb--0">Deposit (£)</label>
+                <input type="number" name="Deposit" id={"deposit" + blk.number} className="ch-display--block ch-form__control" />
               </div>
             </div>
-            <div class="col">
-              <div className="form-group d-block">
-                <label htmlFor={"months" + blk.number} className="d-block mb-0">Term (months)</label>
-                <input type="number" name="Months" id={"months" + blk.number} className="d-block form-control" />
+            <div className="xs:ch-col--6 ch-mh--0">
+              <div className="ch-form__group ch-display--block">
+                <label htmlFor={"monthly" + blk.number} className="ch-display--block ch-mb--0">Monthly (£)</label>
+                <input type="number" name="Monthly" id={"monthly" + blk.number} className="ch-display--block ch-form__control" />
+              </div>
+            </div>
+          </div>
+          <div className="ch-form__group ch-display--block">
+            <label htmlFor={"image" + blk.number} className="ch-display--block ch-mb--0">Image URL</label>
+            <input type="text" name="Image" id={"image" + blk.number} className="ch-display--block ch-form__control" />
+          </div>
+          <div className="ch-row">
+            <div className="xs:ch-col--6 ch-mh--0">
+              <div className="ch-form__group ch-display--block">
+                <label htmlFor={"usp" + blk.number} className="ch-display--block ch-mb--0">USP</label>
+                <input type="text" name="USP" id={"usp" + blk.number} className="ch-display--block ch-form__control" />
+              </div>
+            </div>
+            <div className="xs:ch-col--6 ch-mh--0">
+              <div className="ch-form__group ch-display--block">
+                <label htmlFor={"months" + blk.number} className="ch-display--block ch-mb--0">Term (months)</label>
+                <input type="number" name="Months" id={"months" + blk.number} className="ch-display--block ch-form__control" />
               </div>
             </div>
           </div>
@@ -196,7 +195,7 @@ class Data extends Component {
                     <table class="row--white">
                       <tr>
                         <td class="text-pad">
-                          <img width="215" label="Car image" src="${data[i].Image}" alt="${ data[i].Name }" />
+                          <img width="215" label="Car image" src="${data[i].Image}" alt="${ data[i].Name }" class="center"/>
                         </td>
                       </tr>
                     </table>
@@ -271,16 +270,23 @@ class Data extends Component {
 
   render() {
     return (
-      <div className="row">
-        {this.renderBlocks()}
-        <div className={"generate-links " + (this.state.inputTrue ? 'd-block' : 'd-none')}>
-          <div className="form-group d-block">
-            <a href="#" id="genJSON" className="btn btn-primary" download="affinity-deals.json">Generate JSON</a>
-            <a href="#" id="genCSV" className="btn btn-info" download="affinity-deals.csv">Generate CSV</a>
-            <a href="#" id="genEmail" className="btn btn-dark" download="affinity-deals.html">Generate HTML</a>
+      <>
+        <div className="form">
+          <div className="ch-container">
+            <div className="ch-row">
+              {this.renderBlocks()}
+            </div>
           </div>
         </div>
-      </div>
+      
+        <div className="generate-links ch-bt--1 ch-bc--grey-3">
+          <div className="ch-form__group ch-display--block">
+            <a href="#" id="genJSON" className="ch-mh--2 ch-btn ch-btn--success" download="affinity-deals.json">Generate JSON</a>
+            <a href="#" id="genCSV" className="ch-mh--2 ch-btn ch-btn--secondary" download="affinity-deals.csv">Generate CSV</a>
+            <a href="#" id="genEmail" className="ch-mh--2 ch-btn ch-btn--primary" download="affinity-deals.html">Generate HTML</a>
+          </div>
+        </div>
+      </>
     );
   }
 }
