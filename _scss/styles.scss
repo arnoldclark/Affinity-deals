@@ -11,12 +11,20 @@ body {
   color: #fff;
   text-decoration: none;
 
+  &:hover {
+    color: #fff;
+  }
+
   &-dark {
     background-color: #2d3737;
   }
 
   &-info {
     background-color: #00A1E0;
+  }
+
+  &-primary {
+    background-color: #87189D;
   }
 }
 .select {
