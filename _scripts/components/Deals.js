@@ -56,9 +56,10 @@ class Data extends Component {
               "Monthly": parseInt(document.querySelector("#monthly" + (x+1)).value),
               "Deposit": parseInt(document.querySelector("#deposit" + (x+1)).value),
               "Months": parseInt(document.querySelector("#months" + (x+1)).value),
-              "USP": parseInt(document.querySelector("#usp" + (x+1)).value)
+              "USP": document.querySelector("#usp" + (x+1)).value
             }
           )
+          console.log(data)
         }
         _this.createDownloadJSONButton(data)
       })
@@ -214,7 +215,7 @@ class Data extends Component {
                         <td class="text-pad">
                           <h5 class="mobile-center make-model">${ data[i].Name }</h5>
                           <p class="mobile-center variant">${ data[i].Spec }</p>
-                          <p class="mobile-center emissions">${ data[i].mpg } mpg | ${ data[i].c02 } g/km CO₂</p>
+                          <p class="mobile-center emissions">${ data[i].MPG } mpg | ${ data[i].C02 } g/km CO₂</p>
                           <p class="from-price mobile-center">First rental<br><strong><span class="from-price--number">£${ data[i].Deposit }</span></strong></p>
                           <p class="saving mobile-center">Monthly rental<br><strong><span class="saving--number">£${ data[i].Monthly }</span></strong></p>
                           <a href="https://autocentre.acvm.com/cgi-bin/tools/?type=affinity" class="blue-link mobile-center link" color="#00a3e0">Find out more</a>
@@ -261,11 +262,6 @@ class Data extends Component {
     let htmlurl = URL.createObjectURL(htmlblob)
 
     document.querySelector("#genEmail").href = htmlurl
-    this.setState({output: str, showHTML: true})
-  }
-
-  outputCode() {
-    return this.state.output
   }
 
   render() {

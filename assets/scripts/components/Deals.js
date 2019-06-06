@@ -98,8 +98,9 @@ function (_Component) {
               "Monthly": parseInt(document.querySelector("#monthly" + (x + 1)).value),
               "Deposit": parseInt(document.querySelector("#deposit" + (x + 1)).value),
               "Months": parseInt(document.querySelector("#months" + (x + 1)).value),
-              "USP": parseInt(document.querySelector("#usp" + (x + 1)).value)
+              "USP": document.querySelector("#usp" + (x + 1)).value
             });
+            console.log(data);
           }
 
           _this.createDownloadJSONButton(data);
@@ -287,7 +288,7 @@ function (_Component) {
       var str = "";
 
       for (var i = 0; i < data.length; i++) {
-        str += "<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr class=\"article\">\n          <td class=\"wrapper content\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-left\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <img width=\"215\" label=\"Car image\" src=\"".concat(data[i].Image, "\" alt=\"").concat(data[i].Name, "\" class=\"center\"/>\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n              </tr>\n            </table>\n          </td>\n          <td class=\"wrapper content last\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-right\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <h5 class=\"mobile-center make-model\">").concat(data[i].Name, "</h5>\n                          <p class=\"mobile-center variant\">").concat(data[i].Spec, "</p>\n                          <p class=\"mobile-center emissions\">").concat(data[i].mpg, " mpg | ").concat(data[i].c02, " g/km CO\u2082</p>\n                          <p class=\"from-price mobile-center\">First rental<br><strong><span class=\"from-price--number\">\xA3").concat(data[i].Deposit, "</span></strong></p>\n                          <p class=\"saving mobile-center\">Monthly rental<br><strong><span class=\"saving--number\">\xA3").concat(data[i].Monthly, "</span></strong></p>\n                          <a href=\"https://autocentre.acvm.com/cgi-bin/tools/?type=affinity\" class=\"blue-link mobile-center link\" color=\"#00a3e0\">Find out more</a>\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n                <td class=\"expander\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr>\n          <td class=\"wrapper content last\">\n            <table class=\"twelve columns\">\n              <tr>\n                <td class=\"text-pad\">\n                  <hr>\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n");
+        str += "<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr class=\"article\">\n          <td class=\"wrapper content\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-left\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <img width=\"215\" label=\"Car image\" src=\"".concat(data[i].Image, "\" alt=\"").concat(data[i].Name, "\" class=\"center\"/>\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n              </tr>\n            </table>\n          </td>\n          <td class=\"wrapper content last\">\n            <table class=\"six columns article-image\">\n              <tr>\n                <td class=\"text-pad-right\">\n                  <center>\n                    <table class=\"row--white\">\n                      <tr>\n                        <td class=\"text-pad\">\n                          <h5 class=\"mobile-center make-model\">").concat(data[i].Name, "</h5>\n                          <p class=\"mobile-center variant\">").concat(data[i].Spec, "</p>\n                          <p class=\"mobile-center emissions\">").concat(data[i].MPG, " mpg | ").concat(data[i].C02, " g/km CO\u2082</p>\n                          <p class=\"from-price mobile-center\">First rental<br><strong><span class=\"from-price--number\">\xA3").concat(data[i].Deposit, "</span></strong></p>\n                          <p class=\"saving mobile-center\">Monthly rental<br><strong><span class=\"saving--number\">\xA3").concat(data[i].Monthly, "</span></strong></p>\n                          <a href=\"https://autocentre.acvm.com/cgi-bin/tools/?type=affinity\" class=\"blue-link mobile-center link\" color=\"#00a3e0\">Find out more</a>\n                        </td>\n                      </tr>\n                    </table>\n                  </center>\n                </td>\n                <td class=\"expander\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n<table class=\"container bg-white\" bgcolor=\"#ffffff\">\n  <tr>\n    <td>\n      <table class=\"row row--white\">\n        <tr>\n          <td class=\"wrapper content last\">\n            <table class=\"twelve columns\">\n              <tr>\n                <td class=\"text-pad\">\n                  <hr>\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n\n");
       }
 
       var htmlblob = new Blob([str], {
@@ -295,15 +296,6 @@ function (_Component) {
       });
       var htmlurl = URL.createObjectURL(htmlblob);
       document.querySelector("#genEmail").href = htmlurl;
-      this.setState({
-        output: str,
-        showHTML: true
-      });
-    }
-  }, {
-    key: "outputCode",
-    value: function outputCode() {
-      return this.state.output;
     }
   }, {
     key: "render",
